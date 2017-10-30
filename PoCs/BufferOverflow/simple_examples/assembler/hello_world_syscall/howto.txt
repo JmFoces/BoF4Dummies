@@ -1,0 +1,22 @@
+## Easy assemble & link with:
+as -32 -m elf_i386 -o <not_linked>.o <source_file>
+ld -o <executable>  <not_linked>.o
+./<executable>
+
+### Take a look @ 
+man syscall 
+#to understand  the meaning %eax register for this case, request system services (as write to stdout)
+
+### Take a look @ 
+# /usr/src/linux-headers-`uname -r`/arch/x86/include/generated/uapi/asm/unistd_32.h
+# to understand the meaning of 
+mov     $4, %eax
+
+## Take a look @
+http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+to understand the meaning of the value & usage of %ebx for this case.
+
+## Slide 34: https://github.com/JmFoces/BoFs/blob/master/assembler.pdf
+"Ejecución-Paradigmas de programación: OS API"
+
+

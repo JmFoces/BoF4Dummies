@@ -1,0 +1,8 @@
+
+file exploitable_32_noprots
+# bof_me after memcpy call
+break *bof_me+84
+#
+r '1' ./flag3
+set disassemble-next-line auto
+si

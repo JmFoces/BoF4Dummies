@@ -1,0 +1,32 @@
+file exploitable_32_noprots
+#break start
+break main 
+
+break *main+109  
+# bof_me call
+break *main+227
+# bof_me call memcpy
+break *bof_me+64
+# bof_me after memcpy call
+break *bof_me+69
+# bof_me ret
+break *bof_me+96
+#
+break *main+342
+#
+r '1' ./exploits/flag3
+c
+x/50x $esp
+si 
+x/50x $esp 
+c
+x/50x $esp 
+c
+x/50x $esp 
+set disassemble-next-line auto
+c
+si
+si
+si
+si
+si

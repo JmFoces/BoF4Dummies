@@ -1,0 +1,5 @@
+all: clean
+	gcc -fpie -pie get_offset2lib.c -o get_offset2lib
+
+clean:
+	rm -f get_offset2lib

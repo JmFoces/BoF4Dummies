@@ -1,0 +1,10 @@
+file exploitable_32_noprots
+break main
+break *main+227
+break *bof_me+69
+r '1' ./exploits/flag1
+c
+x/50x $esp
+si 
+x/50x $esp 
+c

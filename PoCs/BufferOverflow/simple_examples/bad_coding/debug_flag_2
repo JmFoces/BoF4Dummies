@@ -1,0 +1,14 @@
+file flag_2
+break *main+92
+break example
+break *example+33
+break *example+59
+run
+
+## Look @ *main+97 -- > 0x56555686.
+## Look for this address on the stack when example is on execution.
+
+## Observe that *example+65 (0x5655562c) call to never. This memory address is where we want to point the eip.
+## Show stack x/20wx $esp
+
+

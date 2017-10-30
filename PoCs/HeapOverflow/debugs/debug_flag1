@@ -1,0 +1,15 @@
+file exploitable
+break *bof_me+28
+## Look at eax value. It contains the address allocated on the heap that contains our integer value.
+break *bof_me+44
+break *bof_me+77
+break *bof_me+101
+break *bof_me+136
+r '1' ./exploits/flag1
+info registers eax
+c
+info registers eax
+c
+x/50wx $eax
+p something
+c

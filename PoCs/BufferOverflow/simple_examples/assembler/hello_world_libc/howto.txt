@@ -1,0 +1,7 @@
+## Easy assemble & link with:
+gcc -m32 -o <output_executable> <source_file>
+
+## Enable verbose output with -v. More @ `man gcc` & `man puts`
+
+## Example:
+gcc -v -m32 -o hello_world hello_world.s

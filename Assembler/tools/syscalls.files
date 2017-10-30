@@ -1,0 +1,2 @@
+/usr/src/linux-headers-$KVERS-amd64/arch/x86/include/generated/uapi/asm/unistd_64.h
+/usr/src/linux-headers-$KVERS-amd64/arch/x86/include/generated/uapi/asm/unistd_32.h

@@ -1,0 +1,8 @@
+file /bin/bash
+break *shell_execve
+breaj *execve
+r -c ./example1_64
+info registers rsp
+x/1gx $rsp
+backtrace
+x/1s $rdi

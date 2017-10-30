@@ -1,0 +1,3 @@
+https://en.wikipedia.org/wiki/Integer_overflow
+http://projects.webappsec.org/w/page/13246946/Integer%20Overflows
+https://www.exploit-db.com/docs/28477.pdf

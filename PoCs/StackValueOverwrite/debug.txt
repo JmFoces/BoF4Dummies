@@ -1,0 +1,28 @@
+#gcc -ggdb -o stack_overwrite stack_overwrite.c 
+file stack_overwrite
+break *main+0
+break *main+292
+break *main+297
+
+#r `python -c 'print "C"*60+"hola"'`
+r `python -c 'print "C"*104+"\xff\xff\xff\xff\xff\xff\xff\x0f"'`
+info proc mappings
+disas
+info registers rsp rbp
+si
+si
+info registers rsp rbp
+si
+info registers rsp rbp rsi rdi
+n
+x/64hx $rsp
+si
+x/64hx $rsp
+n
+n
+n
+n
+n
+x/64hx $rsp
+n
+x/64hx $rsp

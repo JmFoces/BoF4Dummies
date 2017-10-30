@@ -1,0 +1,24 @@
+file example1_1_32
+break _start
+break sayhello
+
+shell echo "##### Program Starting #####"
+r
+disas
+info registers esp ebp eip
+x/wx $esp
+x/wx $ebp
+
+shell echo "##### 1 #####"
+si
+disas
+info registers esp ebp eip
+x/wx $esp
+x/wx $ebp
+
+shell echo "##### 2 #####"
+si
+disas
+info registers esp ebp eip
+x/2wx $esp
+x/2wx $ebp

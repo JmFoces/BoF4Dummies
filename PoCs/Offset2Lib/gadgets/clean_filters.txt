@@ -1,0 +1,1 @@
+mov qword ptr [rdi], rax ; pop rbx ; pop rbp|mov qword ptr [rdi], rdx|pop rax|pop rdi|pop rdx|pop rsi|syscall|xor rax, rax|
