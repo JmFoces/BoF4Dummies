@@ -1,5 +1,5 @@
 # BoF4Dummies #
-This repo is just to share some examples and PoCs about buffer based vulnerabilities for self-learning on my freetime.
+This repo is just to share some examples and PoCs about buffer based vulnerabilities for self-learning.
 
 ## Third party resources ##
 I hope not to forget anyone:
